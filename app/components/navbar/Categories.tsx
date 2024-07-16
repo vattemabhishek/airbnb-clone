@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Container from '../Container'
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
 import {
@@ -122,4 +122,12 @@ const Categories = () => {
   )
 }
 
-export default Categories
+const WrappedCategories = () => {
+  return (
+    <Suspense>
+      <Categories />
+    </Suspense>
+  )
+}
+
+export default WrappedCategories

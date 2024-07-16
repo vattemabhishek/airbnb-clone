@@ -7,6 +7,16 @@ const nextConfig = {
       { hostname: 'res.cloudinary.com' },
     ],
   },
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  ) => {
+    // Important: return the modified config
+    config.resolve.fallback = {
+      fs: false,
+    }
+    return config
+  },
 }
 
 export default nextConfig

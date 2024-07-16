@@ -3,7 +3,7 @@ import useCountries from '@/app/hooks/useCountries'
 import useSearchModal from '@/app/hooks/useSearchModal'
 import { differenceInCalendarDays } from 'date-fns'
 import { useSearchParams } from 'next/navigation'
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { BiSearch } from 'react-icons/bi'
 
 const Search = () => {
@@ -64,4 +64,12 @@ const Search = () => {
   )
 }
 
-export default Search
+const WrappedSearch = () => {
+  return (
+    <Suspense>
+      <Search />
+    </Suspense>
+  )
+}
+
+export default WrappedSearch

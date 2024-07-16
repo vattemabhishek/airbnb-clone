@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
-import React, { useCallback } from 'react'
+import React, { Suspense, useCallback } from 'react'
 import { IconType } from 'react-icons'
 import qs from 'query-string'
 
@@ -54,4 +54,12 @@ const CategoryBox = ({ icon: Icon, label, selected }: CategoryBoxProps) => {
   )
 }
 
-export default CategoryBox
+const WrappedCategoryBox = (props: CategoryBoxProps) => {
+  return (
+    <Suspense>
+      <CategoryBox {...props} />
+    </Suspense>
+  )
+}
+
+export default WrappedCategoryBox

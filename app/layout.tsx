@@ -9,6 +9,7 @@ import LoginModal from './components/modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
 import RentModal from './components/modals/RentModal'
 import SearchModal from './components/modals/SearchModal'
+import React from 'react'
 
 const font = Nunito({ subsets: ['latin'] })
 

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import EmptyState from './components/EmptyState'
+import React from 'react'
 
 interface ErrorStateProps {
   error: Error

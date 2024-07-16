@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import getCurrentUser from '../actions/getCurrentUser'
 import EmptyState from '../components/EmptyState'
